@@ -14,6 +14,7 @@ import plumbing from "./assets/plumbing.png";
 import animation from "./assets/animation.png";
 import laundry from "./assets/laundry.png";
 import design from "./assets/design.png";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -189,6 +190,9 @@ function App() {
           Recruit Here
         </h1>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

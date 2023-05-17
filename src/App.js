@@ -1,8 +1,16 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
+import SharedJob from "./components/SharedJob";
+
 import shakingHands from "./assets/shakingHands.jpg";
 import construction from "./assets/construction.png";
 import SharedInfo from "./components/SharedInfo";
+
+// Images for SharedJob
+import photography from "./assets/photography.png";
+import logistic from "./assets/logistic.png";
+import carpentry from "./assets/carpentry.png";
+import plumbing from "./assets/plumbing.png";
 
 function App() {
   return (
@@ -30,7 +38,7 @@ function App() {
       </div>
 
       {/* Greeting section */}
-      <div className="flex flex-row justify-center gap-20 my-10">
+      <div className="flex flex-row justify-center gap-20 my-20">
         <img
           src={shakingHands}
           alt="shakingHands.jpg"
@@ -59,6 +67,18 @@ function App() {
             main="Secure transactions."
             sub="Get your work done by talented freelancers."
           />
+        </div>
+      </div>
+
+      {/* Jobs we have */}
+      <div>
+        <h3 className="font-bold">Whatever you need, we’ve got you</h3>
+        <div className="grid grid-cols-4 justify-center">
+          <SharedJob pic={photography} text="Photography" />
+          <SharedJob pic={logistic} text="Logistic" />
+          <SharedJob pic={carpentry} text="Carpentry" />
+          <SharedJob text="Other" />
+          <SharedJob pic={plumbing} text="Plumbing" />
         </div>
       </div>
     </div>

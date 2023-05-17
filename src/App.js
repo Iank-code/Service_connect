@@ -11,6 +11,9 @@ import photography from "./assets/photography.png";
 import logistic from "./assets/logistic.png";
 import carpentry from "./assets/carpentry.png";
 import plumbing from "./assets/plumbing.png";
+import animation from "./assets/animation.png";
+import laundry from "./assets/laundry.png";
+import design from "./assets/design.png";
 
 function App() {
   return (
@@ -71,14 +74,19 @@ function App() {
       </div>
 
       {/* Jobs we have */}
-      <div>
-        <h3 className="font-bold">Whatever you need, we’ve got you</h3>
-        <div className="grid grid-cols-4 justify-center">
+      <div className="mb-16">
+        <h3 className="font-bold flex flex-col items-center pb-10">
+          Whatever you need, we’ve got you
+        </h3>
+        <div className="grid grid-cols-4 justify-center gap-10">
           <SharedJob pic={photography} text="Photography" />
           <SharedJob pic={logistic} text="Logistic" />
           <SharedJob pic={carpentry} text="Carpentry" />
           <SharedJob text="Other" />
           <SharedJob pic={plumbing} text="Plumbing" />
+          <SharedJob pic={laundry} text="Laundry" />
+          <SharedJob pic={design} text="Web Design" />
+          <SharedJob pic={animation} text="Video and Animation" />
         </div>
       </div>
     </div>

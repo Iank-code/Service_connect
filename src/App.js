@@ -74,7 +74,15 @@ function App() {
       </div>
 
       {/* Jobs we have */}
-      <div className="mb-16">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        className="mb-16"
+      >
         <h3 className="font-bold flex flex-col items-center pb-10">
           Whatever you need, we’ve got you
         </h3>
@@ -89,6 +97,98 @@ function App() {
           <SharedJob pic={animation} text="Video and Animation" />
         </div>
       </div>
+
+      {/* For Client section */}
+      <div className="bg-green-900 flex flex-col text-white py-20 gap-40 my-20 mx-20 rounded-md">
+        <span className="ml-14 text-lg font-bold">For Client</span>
+
+        <div className="flex gap-10 ml-14">
+          <div className="flex flex-col gap-8">
+            {/* For introductory text */}
+            <div>
+              <h1 className="text-2xl font-bold">
+                Find Skilled
+                <br />
+                Talent Today
+              </h1>
+              <span className="text-gray-400">
+                Find talent you want to work with.
+              </span>
+            </div>
+
+            {/* For client bullet points */}
+            <div>
+              <ul>
+                <li>Choose the right talent for your work.</li>
+                <li>Choose your preferred date and time</li>
+                <li>Choose your location</li>
+                <li>Timely Support and Assistance</li>
+              </ul>
+            </div>
+
+            {/* Button that directs to Client create account */}
+            <button className="bg-white text-green-900 py-1 px-4 rounded">
+              Create Client Account
+            </button>
+          </div>
+
+          {/* for client image */}
+          <div></div>
+        </div>
+      </div>
+      {/* For Freelancer section */}
+      <div className="bg-green-900 flex flex-col text-white py-20 gap-40 my-10 mx-20 rounded-md">
+        <span className="ml-14 text-lg font-bold">For Freelancer</span>
+
+        <div className="flex gap-10 ml-14">
+          <div className="flex flex-col gap-8">
+            {/* For introductory text */}
+            <div>
+              <h1 className="text-2xl font-bold">
+                This is where
+                <br />
+                businesses and companies
+                <br />
+                find skilled freelancers
+              </h1>
+              {/* <span className="text-gray-400">
+                Find talent you want to work with.
+              </span> */}
+            </div>
+
+            {/* For Freelancer bullet points */}
+            <div>
+              <ul>
+                <li>Reliable Payment System.</li>
+                <li>Timely Support and Assistance.</li>
+                <li>Reliable Payment System.</li>
+                <li>Reliable Payment System.</li>
+              </ul>
+            </div>
+
+            {/* Button that directs to Freelancer create account */}
+            <button className="bg-white text-green-900 py-1 px-4 rounded">
+              Create Freelancer Account
+            </button>
+          </div>
+
+          {/* for Freelancer image */}
+          <div></div>
+        </div>
+      </div>
+
+      {/* Have a question? */}
+      <section style={{
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '2em 0'
+      }}>
+        <h1 className="text-2xl font-bold">
+          Have a Project ?
+          <br />
+          Recruit Here
+        </h1>
+      </section>
     </div>
   );
 }

@@ -22,13 +22,14 @@ function App() {
       <Navbar />
 
       {/* For the greeting and first section */}
-      <div className="flex flex-row justify-between bg-green-900 py-10 gap-10">
+      {/* Done with responsive design */}
+      <div className="flex flex-row justify-between bg-green-900 py-10 gap-10 mobile:gap-1 mobile:flex-col mobile:justify-center mobile:gap-12 ">
         {/* For greeting text */}
-        <div className="flex flex-col justify-center gap-5 ml-12">
-          <h1 className="text-white text-xl">
+        <div className="flex flex-col justify-center gap-5 ml-12 mobile:ml-3 mobile:gap-4">
+          <h1 className="text-white text-xl mobile:text-xl mobile:flex mobile:justify-center">
             Find your perfect match <br /> for any project
           </h1>
-          <button className="bg-white text-green-900 rounded px-4 py-2 font-bold">
+          <button className="bg-white text-green-900 rounded px-4 py-2 font-bold mobile:px-3 mobile:mx-14 mobile:py-1">
             Get Started
           </button>
         </div>
@@ -36,7 +37,7 @@ function App() {
         <img
           src={construction}
           alt="construction worker"
-          className="w-80 h-80"
+          className="w-80 h-80 mobile:flex mobile:justify-center mobile:w-50 mobile:h-50"
         />
         <div> </div>
       </div>
@@ -82,12 +83,12 @@ function App() {
           justifyContent: "center",
           alignItems: "center",
         }}
-        className="mb-16"
+        className="mb-16 mobile:m-10"
       >
-        <h3 className="font-bold flex flex-col items-center pb-10">
+        <h3 className="font-bold flex flex-col items-center pb-10 mobile:text-lg">
           Whatever you need, we’ve got you
         </h3>
-        <div className="grid grid-cols-4 justify-center gap-10">
+        <div className="grid grid-cols-4 justify-center gap-10 ">
           <SharedJob pic={photography} text="Photography" />
           <SharedJob pic={logistic} text="Logistic" />
           <SharedJob pic={carpentry} text="Carpentry" />
@@ -179,11 +180,13 @@ function App() {
       </div>
 
       {/* Have a question? */}
-      <section style={{
-        display: 'flex',
-        justifyContent: 'center',
-        margin: '2em 0'
-      }}>
+      <section
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "2em 0",
+        }}
+      >
         <h1 className="text-2xl font-bold">
           Have a Project ?
           <br />

@@ -47,7 +47,7 @@ function Footer() {
           {/* For Message */}
           <label>Message:</label>
           <textarea
-            placeholder="Enter message ..."
+            placeholder="Enter message s..."
             className="bg-gray-300 py-2 pl-4 rounded-md placeholder:text-black"
           ></textarea>
         </form>

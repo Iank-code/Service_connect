@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import SharedJob from "./components/SharedJob";
+import Footer from "./components/Footer";
 
 import shakingHands from "./assets/shakingHands.jpg";
 import construction from "./assets/construction.png";
@@ -14,7 +15,11 @@ import plumbing from "./assets/plumbing.png";
 import animation from "./assets/animation.png";
 import laundry from "./assets/laundry.png";
 import design from "./assets/design.png";
-import Footer from "./components/Footer";
+import interview from "./assets/interview.png";
+import cleaning from "./assets/cleaning.png";
+
+// Importing css file
+import "./components/shared.css";
 
 function App() {
   return (
@@ -23,7 +28,7 @@ function App() {
 
       {/* For the greeting and first section */}
       {/* Done with responsive design */}
-      <div className="flex flex-row justify-between bg-green-900 py-10 gap-10 mobile:gap-1 mobile:flex-col mobile:justify-center mobile:gap-12 ">
+      <div className="flex flex-row justify-between bg-green-900 py-10 gap-10 mobile:gap-1 mobile:flex-col-reverse mobile:justify-center mobile:gap-12 mobile:pb-10">
         {/* For greeting text */}
         <div className="flex flex-col justify-center gap-5 ml-12 mobile:ml-3 mobile:gap-4">
           <h1 className="text-white text-xl mobile:text-xl mobile:flex mobile:justify-center">
@@ -76,6 +81,7 @@ function App() {
       </div>
 
       {/* Jobs we have */}
+      {/* Done with responsive design */}
       <div
         style={{
           display: "flex",
@@ -83,28 +89,39 @@ function App() {
           justifyContent: "center",
           alignItems: "center",
         }}
-        className="mb-16 mobile:m-10"
+        className="mb-16 mobile:mx-10 mobile:mb-10"
       >
         <h3 className="font-bold flex flex-col items-center pb-10 mobile:text-lg">
           Whatever you need, we’ve got you
         </h3>
-        <div className="grid grid-cols-4 justify-center gap-10 ">
-          <SharedJob pic={photography} text="Photography" />
-          <SharedJob pic={logistic} text="Logistic" />
-          <SharedJob pic={carpentry} text="Carpentry" />
-          <SharedJob text="Other" />
-          <SharedJob pic={plumbing} text="Plumbing" />
-          <SharedJob pic={laundry} text="Laundry" />
-          <SharedJob pic={design} text="Web Design" />
-          <SharedJob pic={animation} text="Video and Animation" />
+        <div className="shared">
+          <div className="flex gap-6">
+            <SharedJob pic={photography} text="Photography" />
+            <SharedJob pic={logistic} text="Logistic" />
+            <SharedJob pic={carpentry} text="Carpentry" />
+          </div>
+          {/* <SharedJob text="Other" /> */}
+          <div className="flex gap-6">
+            <SharedJob pic={plumbing} text="Plumbing" />
+            <SharedJob pic={laundry} text="Laundry" />
+            <SharedJob pic={design} text="Web Design" />
+            <SharedJob pic={animation} text="Video and Animation" />
+          </div>
         </div>
       </div>
 
       {/* For Client section */}
-      <div className="bg-green-900 flex flex-col text-white py-20 gap-40 my-20 mx-20 rounded-md">
+      <div className="bg-green-900 flex flex-col text-white py-20 gap-30 my-20 mx-20 rounded-md">
         <span className="ml-14 text-lg font-bold">For Client</span>
 
-        <div className="flex gap-10 ml-14">
+        <div
+          className="flex gap-10 ml-14"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
           <div className="flex flex-col gap-8">
             {/* For introductory text */}
             <div>
@@ -135,14 +152,28 @@ function App() {
           </div>
 
           {/* for client image */}
-          <div></div>
+          <img
+            src={interview}
+            alt="interview.png"
+            style={{
+              width: "40em",
+              height: "40em",
+            }}
+          />
         </div>
       </div>
       {/* For Freelancer section */}
-      <div className="bg-green-900 flex flex-col text-white py-20 gap-40 my-10 mx-20 rounded-md">
+      <div className="bg-green-900 flex flex-col text-white py-20 gap-30 my-10 mx-20 rounded-md">
         <span className="ml-14 text-lg font-bold">For Freelancer</span>
 
-        <div className="flex gap-10 ml-14">
+        <div
+          className="flex gap-10 ml-14"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
           <div className="flex flex-col gap-8">
             {/* For introductory text */}
             <div>
@@ -153,9 +184,6 @@ function App() {
                 <br />
                 find skilled freelancers
               </h1>
-              {/* <span className="text-gray-400">
-                Find talent you want to work with.
-              </span> */}
             </div>
 
             {/* For Freelancer bullet points */}
@@ -175,7 +203,14 @@ function App() {
           </div>
 
           {/* for Freelancer image */}
-          <div></div>
+          <img
+            src={cleaning}
+            alt="cleaning.png"
+            style={{
+              width: "40em",
+              height: "40em",
+            }}
+          />
         </div>
       </div>
 

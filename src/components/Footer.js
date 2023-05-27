@@ -50,6 +50,8 @@ function Footer() {
             placeholder="Enter message s..."
             className="bg-gray-300 py-2 pl-4 rounded-md placeholder:text-black"
           ></textarea>
+
+          <button type="submit" className="bg-green-900 text-white rounded-md py-2 text-xl">Send</button>
         </form>
       </div>
 

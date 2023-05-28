@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Login() {
   return (
@@ -9,13 +10,21 @@ function Login() {
           <label htmlFor="Email">
             Email:
             <br />
-            <input type="email" className="pl-6 py-3 rounded-md mt-3" style={{fontSize: "18px"}} />
+            <input
+              type="email"
+              className="pl-6 py-3 rounded-md mt-3"
+              style={{ fontSize: "18px" }}
+            />
           </label>
 
           <label htmlFor="Password">
             Password:
             <br />
-            <input type="password" className="pl-6 py-3 rounded-md mt-3" style={{fontSize: "18px"}} />
+            <input
+              type="password"
+              className="pl-6 py-3 rounded-md mt-3"
+              style={{ fontSize: "18px" }}
+            />
           </label>
 
           <button
@@ -25,6 +34,14 @@ function Login() {
             Login
           </button>
         </form>
+
+        <p>
+          Don't have an account?
+          <br />
+          <NavLink to="/register" className="text-blue-900 text-lg">
+            Sign Up
+          </NavLink>
+        </p>
       </div>
     </div>
   );

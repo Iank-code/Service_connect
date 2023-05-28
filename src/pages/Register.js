@@ -33,11 +33,16 @@ const Register = () => {
   };
 
   const renderForm = () => {
+    
     switch (step) {
       case 1:
         return (
           <div>
-            <div>
+            <h2>Step 1: Choose service you want</h2>
+            <div
+              className="flex border-2 border-black rounded cursor-pointer"
+              onClick={() => alert("Am a freelance")}
+            >
               <img src="" alt="hand" />
               <div>
                 <h3>Offer services</h3>
@@ -45,8 +50,21 @@ const Register = () => {
               </div>
               <div> </div>
             </div>
-            <div></div>
-            <div></div>
+            <div className="flex">
+              <img src="" alt="arrow.png" />
+              <span>Connect</span>
+            </div>
+            <div
+              className="flex border-2 border-black rounded cursor-pointer"
+              onClick={() => alert("Am a client")}
+            >
+              <img src="" alt="search.png" />
+              <div>
+                <h3>Discover Services</h3>
+                <span>Find the Perfect Services for Your Needs!</span>
+              </div>
+              <div> </div>
+            </div>
 
             <button type="button" onClick={nextStep}>
               Next
@@ -55,9 +73,9 @@ const Register = () => {
         );
       case 2:
         return (
-          <div>
-            <h2>Step 1: Personal Information</h2>
-            <form>
+          <div >
+            <h2>Step 2: Personal Information</h2>
+            <form className="flex flex-col">
               <label>First Name:</label>
               <input
                 type="text"
@@ -83,9 +101,9 @@ const Register = () => {
         );
       case 3:
         return (
-          <div>
-            <h2>Step 2: Account Information</h2>
-            <form>
+          <div >
+            <h2>Step 3: Account Information</h2>
+            <form className="flex flex-col">
               <label>Email:</label>
               <input
                 type="email"
@@ -116,7 +134,12 @@ const Register = () => {
     }
   };
 
-  return <div>{renderForm()}</div>;
+  return (
+    <div className="flex flex-col w-1/2 h-screen justify-center m-auto">
+      <h1>Signup Page</h1>
+      {renderForm()}
+    </div>
+  );
 };
 
 export default Register;

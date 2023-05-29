@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Navbar";
+import { setServiceProvider, setClient } from "./../features/signupSlice";
 
 const Register = () => {
+  const dispatch = useDispatch();
   const store = useSelector((store) => store.signup);
   console.log(store);
   const [step, setStep] = useState(1);
@@ -47,13 +49,10 @@ const Register = () => {
             <div
               className="flex border-2 border-black rounded cursor-pointer"
               onClick={() => {
-                setIsServiceProvider(true);
-                setIsClient(false);
+                dispatch(setServiceProvider(true));
+                dispatch(setClient(false));
 
-                console.log({
-                  setIsServiceProvider: isServiceProvider,
-                  setIsClient: isClient,
-                });
+                nextStep();
               }}
             >
               <img src="" alt="hand" />
@@ -71,7 +70,11 @@ const Register = () => {
             {/* For client */}
             <div
               className="flex border-2 border-black rounded cursor-pointer"
-              onClick={() => alert("Am a client")}
+              onClick={() => {
+                dispatch(setServiceProvider(false));
+                dispatch(setClient(true));
+                nextStep();
+              }}
             >
               <img src="" alt="search.png" />
               <div>
@@ -81,9 +84,9 @@ const Register = () => {
               <div> </div>
             </div>
 
-            <button type="button" onClick={nextStep}>
+            {/* <button type="button" onClick={nextStep}>
               Next
-            </button>
+            </button> */}
           </div>
         );
       case 2:

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import Navbar from "../components/Navbar";
 
 const Register = () => {
+  const store = useSelector((store) => store.signup);
+  console.log(store);
   const [step, setStep] = useState(1);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -33,15 +37,24 @@ const Register = () => {
   };
 
   const renderForm = () => {
-    
     switch (step) {
       case 1:
         return (
           <div>
             <h2>Step 1: Choose service you want</h2>
+
+            {/* For service provider */}
             <div
               className="flex border-2 border-black rounded cursor-pointer"
-              onClick={() => alert("Am a freelance")}
+              onClick={() => {
+                setIsServiceProvider(true);
+                setIsClient(false);
+
+                console.log({
+                  setIsServiceProvider: isServiceProvider,
+                  setIsClient: isClient,
+                });
+              }}
             >
               <img src="" alt="hand" />
               <div>
@@ -54,6 +67,8 @@ const Register = () => {
               <img src="" alt="arrow.png" />
               <span>Connect</span>
             </div>
+
+            {/* For client */}
             <div
               className="flex border-2 border-black rounded cursor-pointer"
               onClick={() => alert("Am a client")}
@@ -73,7 +88,7 @@ const Register = () => {
         );
       case 2:
         return (
-          <div >
+          <div>
             <h2>Step 2: Personal Information</h2>
             <form className="flex flex-col">
               <label>First Name:</label>
@@ -101,7 +116,7 @@ const Register = () => {
         );
       case 3:
         return (
-          <div >
+          <div>
             <h2>Step 3: Account Information</h2>
             <form className="flex flex-col">
               <label>Email:</label>
@@ -135,10 +150,13 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col w-1/2 h-screen justify-center m-auto">
-      <h1>Signup Page</h1>
-      {renderForm()}
-    </div>
+    <>
+      <Navbar />
+      <div className="flex flex-col w-1/2 h-screen justify-center m-auto">
+        <h1 className="flex justify-center text-xl font-bold">Signup Page</h1>
+        {renderForm()}
+      </div>
+    </>
   );
 };
 

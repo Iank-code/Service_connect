@@ -1,12 +1,13 @@
 import React from "react";
+import {useNavigate } from "react-router-dom"
 import "./../App.css";
-// import { NavLink } from "react-router-dom";
 
 /*
   For Mobile, use "mobile"
 */
 
 function Navbar() {
+  const navigate = useNavigate()
   return (
     <div className="flex flex-row justify-between py-7 mobile:w-10">
       <div className="flex flex-row gap-10 ml-14 mobile:text-sm mobile:gap-4 mobile:ml-2">
@@ -26,8 +27,16 @@ function Navbar() {
 
       {/* For login and signup btns */}
       <div className="flex gap-5 mr-8 mobile:gap-2">
-        <button className="text-green-900 mobile:text-sm">Login</button>
-        <button className="bg-green-900 py-1 px-5 rounded-lg text-white outline-none mobile:text-sm mobile:px-1">
+        <button
+          className="text-green-900 mobile:text-sm"
+          onClick={() => navigate("/login")}
+        >
+          Login
+        </button>
+        <button
+          className="bg-green-900 py-1 px-5 rounded-lg text-white outline-none mobile:text-sm mobile:px-1"
+          onClick={() => navigate("/register")}
+        >
           Sign Up
         </button>
       </div>

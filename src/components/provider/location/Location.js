@@ -1,15 +1,22 @@
 import React from 'react'
-
+import './Location.css'
+import { useNavigate } from 'react-router-dom'
 function Location() {
+    const navigate = useNavigate()
   return (
-    <div>Location
+    <div className='location-body'>
         <div className="location-page">
         <div className="location-container">
             <h1>Where are you located?</h1>
             <p>This will help customers find and book for your service</p>
-            <input type="text" />
+            <input type="text" placeholder='Enter your location'/>
         </div>
         </div>
+        <div className='next-back-btn'>
+
+<button className='back' onClick={()=> navigate('/serviceSelect')}>back</button>
+<button className='next' onClick={()=> navigate('/location')}>next</button>
+</div>
     </div>
   )
 }

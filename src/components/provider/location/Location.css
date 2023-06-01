@@ -1,0 +1,30 @@
+.location-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.location-container{
+    text-align: center;
+}
+.location-container h1{
+    font-size: 34px;
+}
+.location-container p{
+    font-size: 20px;
+}
+.location-container input{
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    border-radius: 50px;
+    background-image: url("https://img.freepik.com/free-vector/location_53876-25530.jpg?size=626&ext=jpg&ga=GA1.1.1678793377.1683746927&semt=ais");
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 45px;
+    text-align: center;
+}
+.location-container input::before{
+    content: "\f3c5";;
+}

@@ -1,12 +1,14 @@
 import React from 'react'
 import './ProviderFace.css'
+import { useNavigate } from 'react-router-dom'
 function ProviderFace() {
+  const navigate = useNavigate()
   return (
     <div >
      
         <div className='provider-step-one-container'>
 
-        <h2>Lets start by getting to know you.</h2>
+        <h2>Let's start by getting to know you.</h2>
             <div className='flex justify-around justify-center items-center h-screen provider-step-one-child-container'>
             <div className="provider-image">
           
@@ -61,7 +63,7 @@ function ProviderFace() {
         <div className='next-back-btn'>
 
 <button className='back'>back</button>
-<button className='next'>next</button>
+<button className='next' onClick={()=> navigate('/serviceSelect')}>next</button>
 </div>
         </div>
        

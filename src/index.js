@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProviderFace from "./components/provider/ProviderFace";
+import ServiceSelect from "./components/provider/serviceSelect/ServiceSelect";
+import Skill from "./components/provider/skill/Skill";
 
 import { store } from "./store";
 import { Provider } from "react-redux";
@@ -21,6 +23,8 @@ root.render(
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/provider" element={<ProviderFace />} />
+          <Route path="/serviceSelect" element={<ServiceSelect/>} />
+          <Route path="/skills" element={<Skill/>} />
         </Routes>
       </BrowserRouter>
     </Provider>

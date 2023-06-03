@@ -10,6 +10,7 @@ import ProviderFace from "./components/provider/ProviderFace";
 import ServiceSelect from "./components/provider/serviceSelect/ServiceSelect";
 import Skill from "./components/provider/skill/Skill";
 import Location from "./components/provider/location/Location";
+import Summary from "./components/provider/summary/Summary";
 
 import { store } from "./store";
 import { Provider } from "react-redux";
@@ -27,6 +28,7 @@ root.render(
           <Route path="/serviceSelect" element={<ServiceSelect />} />
           <Route path="/skills" element={<Skill />} />
           <Route path="/location" element={<Location />} /> 
+          <Route path="/summary" element={<Summary />} /> 
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -25,6 +25,3 @@
       background-size: 45px;
     text-align: center;
 }
-.location-container input::before{
-    content: "\f3c5";;
-}

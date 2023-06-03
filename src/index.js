@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import ServiceDetail from "./pages/ServiceDetail";
+import ServiceDetail from "./pages/servicePage/ServiceDetail";
 
 import { store } from "./store";
 import { Provider } from "react-redux";

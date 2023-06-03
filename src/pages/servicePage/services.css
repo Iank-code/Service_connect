@@ -1,0 +1,64 @@
+.service-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  background-color: rgb(143, 143, 143);
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: black;
+}
+.service-warning-header {
+  font-weight: bold;
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+.service-warning-btn {
+  background-color: green;
+  color: white;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.service-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 16px auto;
+  width: 85%;
+  padding: 26px;
+  border: 2px solid black !important;
+  border-radius: 6px;
+}
+.service-first {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.service-first-shared {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+}
+.service-first-shared p {
+  font-weight: bold !important;
+  font-size: 24px;
+}
+
+/* For select service */
+.select-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+.select {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 6em;
+}

@@ -50,15 +50,20 @@ button {
 }
 
 /* For select service */
-.select-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
+.select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
 }
 .select {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 6em;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 6em;
+}
+
+.box-style {
+  -webkit-box-shadow: 3px 2px 17px 6px rgba(0, 0, 0, 0.66);
+  box-shadow: 3px 2px 17px 6px rgba(0, 0, 0, 0.66);
 }

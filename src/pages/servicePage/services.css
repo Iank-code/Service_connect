@@ -33,6 +33,11 @@ button {
   padding: 26px;
   border: 2px solid black !important;
   border-radius: 6px;
+  position: absolute;
+  background-color: white;
+  top: 15em;
+  left: 8em;
+  z-index: 999;
 }
 .service-first {
   display: flex;
@@ -56,6 +61,7 @@ button {
   justify-content: center;
   align-items: center;
   gap: 2em;
+  margin-top: 20em;
 }
 .select {
   display: grid;

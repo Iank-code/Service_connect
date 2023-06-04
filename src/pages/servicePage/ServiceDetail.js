@@ -13,6 +13,7 @@ import house from "./../../assets/house.png";
 import user1 from "./../../assets/user1.png";
 import bathtab from "./../../assets/bathtab.png";
 import checkMark from "./../../assets/checkMark.png";
+import serviceBackground from "./../../assets/serviceBackground.png";
 
 function ServiceDetail() {
   const [value, onChange] = useState(new Date());
@@ -20,16 +21,37 @@ function ServiceDetail() {
 
   return (
     <div className="h-screen">
+      <img src={serviceBackground} alt="" />
       {/* For service the provider is offering */}
       <div className="service-bar">
         <div className="service-first">
           <div className="service-first-shared">
             <img src={house} alt="house.png" />
-            <div className="flex flex-row gap-2 items-baseline">
-              <p>House Cleaning service</p>
-              <div className="flex flex-2 gap-1">
-                <img src={checkMark} alt="checkMark.png" className="w-5 h-5" />
-                <span className="text-sm">verified</span>
+            <div>
+              <div className="flex flex-row gap-2 items-baseline">
+                <p>House Cleaning service</p>
+                <div className="flex flex-2 gap-1">
+                  <img
+                    src={checkMark}
+                    alt="checkMark.png"
+                    className="w-5 h-5"
+                  />
+                  <span className="text-sm">verified</span>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div className="flex flex-2 gap-1">
+                  <img
+                    src={checkMark}
+                    alt="checkMark.png"
+                    className="w-5 h-5"
+                  />
+                  <span className="text-sm">(50 reviews)</span>
+                </div>
+                {"|"}
+                <span>
+                  Location: <span className="text-blue-500">Nairobi, Thika</span>
+                </span>
               </div>
             </div>
           </div>
@@ -201,7 +223,7 @@ function ServiceDetail() {
 
       {/* For Reviews */}
       <div className="flex flex-col justify-center items-center">
-        <h2>Reviews</h2>
+        <h2 className="font-bold text-2xl">Reviews</h2>
         <div className="ServiceReviews">
           <ServiceReviews />
           <ServiceReviews />

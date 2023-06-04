@@ -14,8 +14,8 @@ function Location() {
         </div>
         <div className='next-back-btn'>
 
-<button className='back' onClick={()=> navigate('/serviceSelect')}>back</button>
-<button className='next' onClick={()=> navigate('/location')}>next</button>
+<button className='back' onClick={()=> navigate('/skills')}>back</button>
+<button className='next' onClick={()=> navigate('/summary')}>next</button>
 </div>
     </div>
   )

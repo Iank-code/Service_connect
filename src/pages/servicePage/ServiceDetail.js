@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import SelectedServices from "./SelectedServices";
+import ServiceReviews from "./ServiceReviews";
 // importing css files
 import "./../../App.css";
 import "./../servicePage/services.css";
@@ -8,6 +10,7 @@ import Calendar from "react-calendar";
 
 // Importing images
 import house from "./../../assets/house.png";
+import user1 from "./../../assets/user1.png";
 import bathtab from "./../../assets/bathtab.png";
 import checkMark from "./../../assets/checkMark.png";
 
@@ -31,7 +34,7 @@ function ServiceDetail() {
             </div>
           </div>
           <div className="service-first-shared">
-            <img src={house} alt="house.png" />
+            <img src={user1} alt="user1.png" />
             <div className="flex flex-col gap-3">
               <div className="flex flex-row gap-2 items-baseline">
                 <p>Ruto Odinga</p>
@@ -148,7 +151,8 @@ function ServiceDetail() {
               }}
             />
           </div>
-          <div>
+          {/* Shows total price, service name and number of reviews */}
+          <div className="flex gap-5 my-3">
             {/* For price */}
             <span className="font-bold">Ksh. 500</span>
             {/* For service being offered */}
@@ -160,7 +164,7 @@ function ServiceDetail() {
           </div>
 
           {/* Shows service date and time */}
-          <div className="flex gap-4 justify-between">
+          <div className="flex gap-4 justify-between mb-3">
             <div>
               <img src="" alt="" />
               <div>
@@ -177,17 +181,34 @@ function ServiceDetail() {
           </div>
 
           {/* Showing work to the service provider */}
-          <div className="border-2 border-black rounded">
+          <div className="border-2 border-black rounded p-6 gap-14 mb-4">
             <div className="flex flex-col">
               <h3 className="font-bold">Services</h3>
               <span>3 selected</span>
             </div>
 
-            
+            {/* For each selected service */}
+            <div>
+              <SelectedServices />
+              <SelectedServices />
+            </div>
           </div>
           <button className="bg-green-800 text-white rounded outline-none py-1 px-4">
             Confirm Request
           </button>
+        </div>
+      </div>
+
+      {/* For Reviews */}
+      <div className="flex flex-col justify-center items-center">
+        <h2>Reviews</h2>
+        <div className="ServiceReviews">
+          <ServiceReviews />
+          <ServiceReviews />
+          <ServiceReviews />
+          <ServiceReviews />
+          <ServiceReviews />
+          <ServiceReviews />
         </div>
       </div>
     </div>

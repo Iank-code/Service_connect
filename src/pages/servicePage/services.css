@@ -67,3 +67,12 @@ button {
   -webkit-box-shadow: 3px 2px 17px 6px rgba(0, 0, 0, 0.66);
   box-shadow: 3px 2px 17px 6px rgba(0, 0, 0, 0.66);
 }
+
+
+.ServiceReviews{
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+}
+.ServiceReviews > *{
+  margin: 2em 6em;
+}

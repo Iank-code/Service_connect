@@ -13,6 +13,7 @@ import Location from "./components/provider/location/Location";
 import Summary from "./components/provider/summary/Summary";
 import Verification from "./components/provider/verification/Verification";
 import ProviderOrders from "./components/provider/providerOrders/ProviderOrders";
+import ServiceDetail from "./pages/servicePage/ServiceDetail";
 
 import { store } from "./store";
 import { Provider } from "react-redux";
@@ -33,6 +34,10 @@ root.render(
           <Route path="/summary" element={<Summary />} /> 
           <Route path="/verification" element={<Verification />} /> 
           <Route path="/providerorders" element={<ProviderOrders />} /> 
+          <Route path={""} element={<App />} />
+          <Route path={"login"} element={<Login />} />
+          <Route path={"register"} element={<Register />} />
+          <Route path={"services"} element={<ServiceDetail />} />
         </Routes>
       </BrowserRouter>
     </Provider>

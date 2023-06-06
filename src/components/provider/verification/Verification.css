@@ -1,0 +1,48 @@
+.verification-child-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.verification-child-container button{
+    margin-left: 30%;
+    padding: 1rem 20rem;
+    margin-top: 5rem;
+    background-color: green;
+    color: azure;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.input-container{
+    margin-top: 20px;
+}
+.file-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #file-input {
+    width: 300px;
+    margin-right: 10px;
+  }
+  
+  .upload-button {
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+
+  
+
+  .verification-child-container h1{
+text-align: center;
+font-size: xx-large;
+
+  }

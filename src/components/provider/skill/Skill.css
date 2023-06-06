@@ -1,0 +1,116 @@
+.skill-container{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    
+}
+.skill-child-container{
+    margin-top: 10%;
+}
+.skill-description{
+    display: flex;
+    justify-content: space-between;
+}
+.skill-description p{
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 50px; 
+    font-size: 18px;
+}
+/* .providers-image{
+    width: 33%;
+    margin-top: 5%;
+} */
+/* .upload-sub-service{
+    background-color: chartreuse;
+    margin-left: 14px;
+    margin-bottom: 10px;
+    width: 90%;
+} */
+.upload-sub-service-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  .skill-child-container h1{
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0;
+  }
+
+  /* Style the title */
+
+
+/* Style the title */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style the subtitle */
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Style the upload box */
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  height: 200px;
+  width: 300px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Style the upload icon */
+.upload-icon {
+  font-size: 48px;
+  color: #ccc;
+}
+
+/* Style the upload text */
+.upload-text {
+  font-size: 16px;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+/* Style the input element */
+input[type="file"] {
+  display: none;
+}
+
+/* Style the wrapper div */
+.image-info {
+  /* Make it a flex container */
+  display: flex;
+  flex-direction: column;
+  /* Align the items vertically */
+  /* align-items: center; */
+  /* Add some margin and padding */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Style the input fields */
+input[type="text"], input[type="number"] {
+  /* Add some border and padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 6px;
+  margin-left: 5px;
+}
+input[type="number"]{
+    margin-left: 12px;
+}
+#upload{
+    margin: 5px;
+}

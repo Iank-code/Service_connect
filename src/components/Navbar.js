@@ -1,5 +1,5 @@
 import React from "react";
-import {useNavigate } from "react-router-dom"
+import { useNavigate, NavLink } from "react-router-dom";
 import "./../App.css";
 
 /*
@@ -7,7 +7,7 @@ import "./../App.css";
 */
 
 function Navbar() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="flex flex-row justify-between py-7 mobile:w-10">
       <div className="flex flex-row gap-10 ml-14 mobile:text-sm mobile:gap-4 mobile:ml-2">
@@ -18,10 +18,13 @@ function Navbar() {
 
         {/* For Links */}
         <div className="flex gap-5 mobile:gap-2 mobile:text-sm">
-          <a className="hover:text-green-900">Services</a>
-          <a className="hover:text-green-900">How it works</a>
-          <a className="hover:text-green-900">About</a>
-          <a className="hover:text-green-900">Contact</a>
+          <NavLink to={"/"} className="hover:text-green-900">
+            Home
+          </NavLink>
+          <NavLink className="hover:text-green-900">Services</NavLink>
+          <NavLink className="hover:text-green-900">How it works</NavLink>
+          <NavLink className="hover:text-green-900">About</NavLink>
+          <NavLink className="hover:text-green-900">Contact</NavLink>
         </div>
       </div>
 

@@ -1,22 +1,22 @@
 import React, { useState } from "react";
+import "./auth.css";
+
 import ellipse from "./../assets/ellipse.png";
 import ellipse2 from "./../assets/ellipse2.png";
 import arrowstwo from "./../assets/arrowstwo.png";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Navbar";
-import { setServiceProvider, setClient } from "./../features/signupSlice";
+import { setRole, setPath } from "./../features/signupSlice";
 
 const Register = () => {
   const dispatch = useDispatch();
   const store = useSelector((store) => store.signup);
   const [step, setStep] = useState(1);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [isServiceProvider, setIsServiceProvider] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const nextStep = () => {
     setStep(step + 1);
@@ -28,20 +28,37 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formCredentials = {
-      firstName,
-      lastName,
-      email,
-      password,
-      isClient: store.isClient,
-      isServiceProvider: store.isServiceProvider,
-    };
-    // Reset form fields
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword("");
-    console.log("Registration submitted:", formCredentials);
+    if (!selectedFile) {
+      alert("Please select a file");
+    }
+    console.log(selectedFile);
+    // path: store.path,
+    // role: store.role,
+
+    const formItem = new FormData()
+
+    formItem.append("username", userName);
+    formItem.append("email", email);
+    formItem.append("password", password);
+    formItem.append("password_confirmation", confirmPassword);
+    formItem.append("address", "232323");
+    formItem.append("phone_number", "123");
+    formItem.append("address", "232323");
+    formItem.append("file", selectedFile);
+    fetch(`${store.path}`, {
+      method: "POST",
+      body: formItem,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle the server's response
+        console.log("Upload successful:", data);
+        // Perform further actions as needed
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the upload
+        console.error("Upload failed:", error);
+      });
   };
 
   const renderForm = () => {
@@ -55,8 +72,10 @@ const Register = () => {
             <div
               className="flex border-2 border-black rounded cursor-pointer py-7 px-10 justify-evenly"
               onClick={() => {
-                dispatch(setServiceProvider(true));
-                dispatch(setClient(false));
+                dispatch(setRole("service_provider"));
+                dispatch(
+                  setPath("http://127.0.0.1:3000/service_provider/register")
+                );
 
                 nextStep();
               }}
@@ -83,8 +102,8 @@ const Register = () => {
             <div
               className="flex border-2 border-black rounded cursor-pointer py-7 px-10 justify-evenly"
               onClick={() => {
-                dispatch(setServiceProvider(false));
-                dispatch(setClient(true));
+                dispatch(setRole("customer"));
+                dispatch(setPath("http://127.0.0.1:3000/customer/register"));
                 nextStep();
               }}
             >
@@ -103,43 +122,21 @@ const Register = () => {
             </div>
           </div>
         );
+
       case 2:
         return (
           <div>
-            <h2>Step 2: Personal Information</h2>
+            <h2>Step 2: Account Information</h2>
             <form className="flex flex-col border-2 border-black rounded-md py-10 px-14">
-              <label>First Name:</label>
+              <label>Username:</label>
               <input
+                required
                 className="border-2 border-black rounded pl-4"
                 type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
               />
 
-              <label>Last Name:</label>
-              <input
-                className="border-2 border-black rounded pl-4"
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-
-              <div className="flex flex-col gap-3 mt-3">
-                <button onClick={prevStep} className="hover:text-green-600">
-                  Previous
-                </button>
-                <button onClick={nextStep} className="hover:text-green-600">
-                  Next
-                </button>
-              </div>
-            </form>
-          </div>
-        );
-      case 3:
-        return (
-          <div>
-            <h2>Step 3: Account Information</h2>
-            <form className="flex flex-col border-2 border-black rounded-md py-10 px-14">
               <label>Email:</label>
               <input
                 required
@@ -167,7 +164,18 @@ const Register = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
 
-              <div className="flex flex-col gap-3 mt-3">
+              <input
+                type="file"
+                accept="image/*"
+                // name="image"
+                id="file-input"
+                onChange={(e) => {
+                  console.log(e.target.files[0]);
+                  setSelectedFile(e.target.files[0]);
+                }}
+              />
+
+              <div className="flex flex-col gap-3 mt-14">
                 <button onClick={prevStep} className="hover:text-green-600">
                   Previous
                 </button>

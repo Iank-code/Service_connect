@@ -1,17 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Store from './redux/Store';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ProviderFace from "./components/provider/ProviderFace";
+import ServiceSelect from "./components/provider/serviceSelect/ServiceSelect";
+import Skill from "./components/provider/skill/Skill";
+import Location from "./components/provider/location/Location";
+import Summary from "./components/provider/summary/Summary";
+import Verification from "./components/provider/verification/Verification";
+import ProviderOrders from "./components/provider/providerOrders/ProviderOrders";
+import ServiceDetail from "./pages/servicePage/ServiceDetail";
 import HomePage from './components/cust_homepage/HomePage';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { store } from "./store";
+import { Provider } from "react-redux";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={Store}>
-      <HomePage />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/provider" element={<ProviderFace />} />
+          <Route path="/serviceSelect" element={<ServiceSelect />} />
+          <Route path="/skills" element={<Skill />} />
+          <Route path="/location" element={<Location />} /> 
+          <Route path="/summary" element={<Summary />} /> 
+          <Route path="/verification" element={<Verification />} /> 
+          <Route path="/providerorders" element={<ProviderOrders />} /> 
+          <Route path={""} element={<App />} />
+          <Route path={"login"} element={<Login />} />
+          <Route path={"register"} element={<Register />} />
+          <Route path={"services"} element={<ServiceDetail />} />
+          <Route path={"home"} element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

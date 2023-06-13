@@ -1,0 +1,35 @@
+.service-select-body{
+  margin-top: 10%;
+}
+.service-select-body h1{
+    text-align: center;
+    font-size: 40px;
+}
+.service-choice{
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.service-choice img{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.service-choice p{
+    font-size: xx-large;
+}
+.service-choice div{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    border: 1px solid burlywood;
+    align-items: center;
+    width: 50%;
+    height: 20vh;
+    margin: 15px;
+}
+.service-choice div:hover{
+    cursor: pointer;
+    background-color: antiquewhite;
+}

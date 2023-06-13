@@ -14,6 +14,9 @@ import Summary from "./components/provider/summary/Summary";
 import Verification from "./components/provider/verification/Verification";
 import ProviderOrders from "./components/provider/providerOrders/ProviderOrders";
 import ServiceDetail from "./pages/servicePage/ServiceDetail";
+import AdminHome from "./components/admin/AdminHome";
+import Users from "./components/admin/Users";
+import AdminProvider from "./components/admin/AdminProvider";
 import HomePage from './components/cust_homepage/HomePage';
 
 import { store } from "./store";
@@ -39,7 +42,14 @@ root.render(
           <Route path={"login"} element={<Login />} />
           <Route path={"register"} element={<Register />} />
           <Route path={"services"} element={<ServiceDetail />} />
+
+          <Route path="/admin" element={<AdminHome />} /> 
+          <Route path="/adminusers" element={<Users />} /> 
+          <Route path="/adminprovider" element={<AdminProvider />} /> 
+          
+
           <Route path={"home"} element={<HomePage />} />
+
         </Routes>
       </BrowserRouter>
     </Provider>

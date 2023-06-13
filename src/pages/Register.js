@@ -35,7 +35,7 @@ const Register = () => {
     // path: store.path,
     // role: store.role,
 
-    const formItem = new FormData()
+    const formItem = new FormData();
 
     formItem.append("username", userName);
     formItem.append("email", email);

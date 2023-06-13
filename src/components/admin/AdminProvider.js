@@ -1,12 +1,13 @@
 import React from 'react'
 import './AdminHome.css'
-function Users() {
+function AdminProvider() {
   return (
-    <main>
+      
+       <main>
     <div className='table-data'> 
               <div class="order">
                 <div class="head">
-                  <h3>Customers</h3>
+                  <h3>Service Providers</h3>
                   <i class='bx bx-search' ></i>
                   <i class='bx bx-filter' ></i>
                 </div>
@@ -15,9 +16,9 @@ function Users() {
                     <tr>
                       <th>Name</th>
                      
-                     
+                      <th>Service Name</th>
                       <th>Ongoing Orders</th>
-                     
+                      <th>Rating</th>
                       <th>More</th>
                       <th className='admin-action-btn'><span>Edit</span> <span>Delete</span></th>
                       
@@ -31,8 +32,9 @@ function Users() {
                         <p>Aisha Jumwa</p>
                       </td>
                      
-                    
+                      <td><span class="st">Cleaning</span></td>
                       <td><span class="status process">1</span></td>
+                      <td><span class="s">4.8</span></td>
                     
                      
                       <td><span class="admin-service">Details</span></td>
@@ -47,9 +49,9 @@ function Users() {
                         <p>Larry Madowo</p>
                       </td>
                       
-                  
+                      <td><span class="st">Cleaning</span></td>
                       <td><span class="status process">40</span></td>
-                    
+                      <td><span class="st">4</span></td>
                   
                       <td><span class="admin-service">Details</span></td>
                       <td className='admin-action-btn'>
@@ -62,8 +64,11 @@ function Users() {
                         <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
                         <p>Onyancha Junior</p>
                       </td>
+                      <td><span class="st">Cleaning</span></td>
                      <td><span class="status process">23</span></td>
+                     <td><span class="st">3.5</span></td>
                      <td><span class="admin-service">Details</span></td>
+
                      <td className='admin-action-btn'>
                         <span class="admin-service-action-btn"><i class="fas fa-edit" aria-hidden="true"></i></span>
                         <span class="admin-service-action-btn"><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -74,8 +79,9 @@ function Users() {
                         <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
                         <p>Alex Mwakideu</p>
                       </td>
-                     
+                      <td><span class="st">Cleaning</span></td>
                       <td><span class="status process">40</span></td>
+                      <td><span class="st">5</span></td>
                       <td><span class="admin-service">Details</span></td>
                       <td className='admin-action-btn'>
                         <span class="admin-service-action-btn"><i class="fas fa-edit" aria-hidden="true"></i></span>
@@ -95,4 +101,4 @@ function Users() {
   )
 }
 
-export default Users
+export default AdminProvider

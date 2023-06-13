@@ -16,6 +16,7 @@ import ProviderOrders from "./components/provider/providerOrders/ProviderOrders"
 import ServiceDetail from "./pages/servicePage/ServiceDetail";
 import AdminHome from "./components/admin/AdminHome";
 import Users from "./components/admin/Users";
+import AdminProvider from "./components/admin/AdminProvider";
 import { store } from "./store";
 import { Provider } from "react-redux";
 
@@ -40,7 +41,8 @@ root.render(
           <Route path={"register"} element={<Register />} />
           <Route path={"services"} element={<ServiceDetail />} />
           <Route path="/admin" element={<AdminHome />} /> 
-          <Route path="/users" element={<Users />} /> 
+          <Route path="/adminusers" element={<Users />} /> 
+          <Route path="/adminprovider" element={<AdminProvider />} /> 
           
         </Routes>
       </BrowserRouter>

@@ -456,6 +456,14 @@ body {
     border: 1px solid black;
     border-radius: 2px;
   }
+  .admin-action-btn{
+    display: flex;
+    justify-content: space-around;
+  
+  }
+  .admin-service-action-btn:hover{
+    cursor: pointer;
+  }
   #content main .table-data .order table tr td .admin-service:hover{
     cursor: pointer;
   }

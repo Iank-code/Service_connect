@@ -1,25 +1,25 @@
 import React from 'react'
-import './AdminHome.css'
-function Users() {
+
+function Verifiy() {
   return (
     <main>
     <div className='table-data'> 
               <div class="order">
                 <div class="head">
-                  <h3>Customers</h3>
+                  <h3>Provider Verification</h3>
                   <i class='bx bx-search' ></i>
                   <i class='bx bx-filter' ></i>
                 </div>
                 <table>
                   <thead>
                     <tr>
+                      <th>Image</th>
+                     
                       <th>Name</th>
-                     
-                     
-                      <th>Ongoing Orders</th>
-                     
+                      <th>Service Name</th>
+                      <th>Documents</th>
                       <th>More</th>
-                      <th className='admin-action-btn'><span>Edit</span> <span>Delete</span></th>
+                      <th className='admin-action-btn'><span>Approve</span> <span>Deny</span></th>
                       
 
                     </tr>
@@ -28,58 +28,65 @@ function Users() {
                     <tr>
                       <td>
                         <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
-                        <p>Aisha Jumwa</p>
+                    
                       </td>
                      
-                    
-                      <td><span class="status process">1</span></td>
+                      <td><span class="st">Aish Jumwa</span></td>
+                      <td><span class="st">Car wash</span></td>
+                      <td><span class="status completed">Uploaded</span></td>
                     
                      
                       <td><span class="admin-service">Details</span></td>
                       <td className='admin-action-btn'>
-                        <span class="admin-service-action-btn"><i class="fas fa-edit" aria-hidden="true"></i></span>
-                        <span class="admin-service-action-btn"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                        <span class="admin-service-action-btn"><i class="fas fa-check" aria-hidden="true"></i></span>
+                        <span class="admin-service-action-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
-                        <p>Larry Madowo</p>
+                        
                       </td>
                       
-                  
-                      <td><span class="status process">40</span></td>
-                    
+                      <td><span class="st">Larry Madowo</span></td>
+                      <td><span class="st">Car wash</span></td>
+                      <td><span class="status completed">Uploaded</span></td>
                   
                       <td><span class="admin-service">Details</span></td>
                       <td className='admin-action-btn'>
-                        <span class="admin-service-action-btn"><i class="fas fa-edit" aria-hidden="true"></i></span>
-                        <span class="admin-service-action-btn"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                      <span class="admin-service-action-btn"><i class="fas fa-check" aria-hidden="true"></i></span>
+                        <span class="admin-service-action-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
-                        <p>Onyancha Junior</p>
+                      
                       </td>
-                     <td><span class="status process">23</span></td>
+                      <td><span class="st">Onyancha Junior</span></td>
+                      <td><span class="st">Cleaning</span></td>
+                     <td><span class="status process">Uploading</span></td>
+        
                      <td><span class="admin-service">Details</span></td>
+                   
                      <td className='admin-action-btn'>
-                        <span class="admin-service-action-btn"><i class="fas fa-edit" aria-hidden="true"></i></span>
-                        <span class="admin-service-action-btn"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                     <span class="admin-service-action-btn"><i class="fas fa-check" aria-hidden="true"></i></span>
+                        <span class="admin-service-action-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
-                        <p>Alex Mwakideu</p>
+                    
                       </td>
+                      <td><span class="st">Alex Mwakideu</span></td>
+                      <td><span class="st">Painting</span></td>
+                      <td><span class="status cancelled">id Missing</span></td>
                      
-                      <td><span class="status process">40</span></td>
                       <td><span class="admin-service">Details</span></td>
                       <td className='admin-action-btn'>
-                        <span class="admin-service-action-btn"><i class="fas fa-edit" aria-hidden="true"></i></span>
-                        <span class="admin-service-action-btn"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                      <span class="admin-service-action-btn"><i class="fas fa-check" aria-hidden="true"></i></span>
+                        <span class="admin-service-action-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
                       </td>
                       
                       
@@ -95,4 +102,4 @@ function Users() {
   )
 }
 
-export default Users
+export default Verifiy

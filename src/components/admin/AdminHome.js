@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import './AdminHome.css'
 import Users from './Users';
+import AdminProvider from './AdminProvider';
+import Verifiy from './Verifiy';
 function AdminHome() {
     
-  
+    const [selected, setSelected] = useState('dashboard')
+    
     const [isActive, setActive] = useState(false);
     const toggleClass = () => {
       setActive(!isActive);
     };
-    const [users, setUsers] = useState(null)
-    console.log(users)
+
     return (
       <div className="App">
     
@@ -19,16 +21,16 @@ function AdminHome() {
             <span class="text">AdminHub</span>
           </a>
           <ul class="side-menu top">
-            <li class="active">
+            <li class="active" onClick={()=>setSelected('dashboard')}>
               <a href="#">
                 <i class='bx bxs-dashboard' ></i>
                 <span class="text">Dashboard</span>
               </a>
             </li>
-            <li>
+            <li onClick={()=>setSelected('verification')}>
               <a href="#">
                 <i class='bx bxs-shopping-bag-alt' ></i>
-                <span class="text">Orders</span>
+                <span class="text">Verifications</span>
               </a>
             </li>
             <li>
@@ -44,13 +46,13 @@ function AdminHome() {
                 <span class="text">Message</span>
               </a>
             </li>
-            <li>
+            <li onClick={()=>setSelected('providers')}>
               <a href="#">
-                <i class='bx bxs-message-dots' ></i>
+                <i class='bx bxs-server' ></i>
                 <span class="text">Providers</span>
               </a>
             </li>
-            <li  onClick={()=>setUsers(1)}>
+            <li  onClick={()=>setSelected('users')}>
               <a href="#">
                 <i class='bx bxs-group'></i>
                 <span class="text">Customers</span>
@@ -92,7 +94,11 @@ function AdminHome() {
               <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
             </a>
           </nav>
-        {users ? (<>< Users /></>):(<>  
+          {selected === 'users' && <Users /> }
+          {selected === 'providers' && <AdminProvider /> }
+          {selected === 'verification' && <Verifiy /> }
+          {selected === 'dashboard' && 
+          <>  
           <main>
             <div class="head-title">
               <div class="left">
@@ -242,7 +248,9 @@ function AdminHome() {
                 </ul>
               </div>
             </div>
-          </main></>)}
+          </main></>
+          }
+        
       
          
         </section>

@@ -4,6 +4,7 @@ import Filters from './Filters';
 import SearchItem from './SearchItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { setServicesData } from '../../redux/ServicesData';
+import Navbar from '../Navbar';
 
 function HomePage() {
     const { servicesData} = useSelector(state => state.services);
@@ -24,6 +25,7 @@ function HomePage() {
     
     return (
             <div>
+                <Navbar />
                 <SearchItem/>
                 <Filters/>
                 <div className='flex flex-wrap justify-between px-24'>

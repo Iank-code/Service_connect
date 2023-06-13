@@ -1,25 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isServiceProvider: false,
-  isClient: false,
+  role: false,
+  path: false,
 };
 const signUpSlice = createSlice({
   name: "signUp",
   initialState,
   reducers: {
+    // For reseting
     reset: (state) => {
-      state.isServiceProvider = false;
-      state.isClient = false;
+      state.role = "";
+      state.path = "";
     },
-    setServiceProvider: (state, action) => {
-      state.isServiceProvider = action.payload;
+    setRole: (state, action) => {
+      state.role = action.payload;
     },
-    setClient: (state, action) => {
-      state.isClient = action.payload;
+    setPath: (state, action) => {
+      state.path = action.payload;
     },
   },
 });
 
-export const { reset, setServiceProvider, setClient } = signUpSlice.actions;
+export const { reset, setRole, setPath } = signUpSlice.actions;
 export default signUpSlice.reducer;

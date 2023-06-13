@@ -35,7 +35,7 @@ const Register = () => {
     // path: store.path,
     // role: store.role,
 
-    const formItem = new FormData()
+    const formItem = new FormData();
 
     formItem.append("username", userName);
     formItem.append("email", email);
@@ -44,6 +44,7 @@ const Register = () => {
     formItem.append("address", "232323");
     formItem.append("phone_number", "123");
     formItem.append("address", "232323");
+    formItem.append("role", store.role);
     formItem.append("file", selectedFile);
     fetch(`${store.path}`, {
       method: "POST",

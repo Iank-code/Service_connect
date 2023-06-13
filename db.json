@@ -1,0 +1,172 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "service_name": "Cleaners",
+            "icon_url": "/icons/Cleaning.png",
+            "image_url": "/images/cleaning.png",
+            "rating": 4.2
+        },
+        {
+            "id": 2,
+            "service_name": "Electrician",
+            "icon_url": "/icons/Tester.png",
+            "image_url": "/images/electrician.png",
+            "rating": 4.5
+        },
+        {
+            "id": 3,
+            "service_name": "Laundry",
+            "icon_url": "/icons/Washer.png",
+            "image_url": "/images/laundry.png",
+            "rating": 4.8
+        },
+        {
+            "id": 4,
+            "service_name": "Movers",
+            "icon_url": "/icons/Moving truck.png",
+            "image_url": "/images/moving.png",
+            "rating": 4.5
+        },
+        {
+            "id": 5,
+            "service_name": "Maintenance",
+            "icon_url": "/icons/Tools.png",
+            "image_url": "/images/maintenance.png",
+            "rating": 3.8
+        },
+        {
+            "id": 6,
+            "service_name": "Gardening",
+            "icon_url": "/icons/Gardening tools.png",
+            "image_url": "/images/gardening.png",
+            "rating": 4.4
+        },
+        {
+            "id": 7,
+            "service_name": "Plumbing",
+            "icon_url": "/icons/Plumber.png",
+            "image_url": "/images/plumbing.png",
+            "rating": 4.6
+        },
+        {
+            "id": 8,
+            "service_name": "Remodeling",
+            "icon_url": "/icons/House.png",
+            "image_url": "/images/Remodeling.png",
+            "rating": 3.9
+        },
+        {
+            "id": 9,
+            "service_name": "Cleaners",
+            "icon_url": "/icons/Cleaning.png",
+            "image_url": "/images/cleaning.png",
+            "rating": 4.2
+        },
+        {
+            "id": 10,
+            "service_name": "Electrician",
+            "icon_url": "/icons/Tester.png",
+            "image_url": "/images/electrician.png",
+            "rating": 4.5
+        },
+        {
+            "id": 11,
+            "service_name": "Laundry",
+            "icon_url": "/icons/Washer.png",
+            "image_url": "/images/laundry.png",
+            "rating": 4.8
+        },
+        {
+            "id": 12,
+            "service_name": "Movers",
+            "icon_url": "/icons/Moving truck.png",
+            "image_url": "/images/moving.png",
+            "rating": 4.5
+        },
+        {
+            "id": 13,
+            "service_name": "Maintenance",
+            "icon_url": "/icons/Tools.png",
+            "image_url": "/images/maintenance.png",
+            "rating": 3.8
+        },
+        {
+            "id": 14,
+            "service_name": "Gardening",
+            "icon_url": "/icons/Gardening tools.png",
+            "image_url": "/images/gardening.png",
+            "rating": 4.4
+        },
+        {
+            "id": 15,
+            "service_name": "Plumbing",
+            "icon_url": "/icons/Plumber.png",
+            "image_url": "/images/plumbing.png",
+            "rating": 4.6
+        },
+        {
+            "id": 16,
+            "service_name": "Remodeling",
+            "icon_url": "/icons/House.png",
+            "image_url": "/images/Remodeling.png",
+            "rating": 3.9
+        },
+        {
+            "id": 17,
+            "service_name": "Cleaners",
+            "icon_url": "/icons/Cleaning.png",
+            "image_url": "/images/cleaning.png",
+            "rating": 4.2
+        },
+        {
+            "id": 18,
+            "service_name": "Electrician",
+            "icon_url": "/icons/Tester.png",
+            "image_url": "/images/electrician.png",
+            "rating": 4.5
+        },
+        {
+            "id": 19,
+            "service_name": "Laundry",
+            "icon_url": "/icons/Washer.png",
+            "image_url": "/images/laundry.png",
+            "rating": 4.8
+        },
+        {
+            "id": 20,
+            "service_name": "Movers",
+            "icon_url": "/icons/Moving truck.png",
+            "image_url": "/images/moving.png",
+            "rating": 4.5
+        },
+        {
+            "id": 21,
+            "service_name": "Maintenance",
+            "icon_url": "/icons/Tools.png",
+            "image_url": "/images/maintenance.png",
+            "rating": 3.8
+        },
+        {
+            "id": 22,
+            "service_name": "Gardening",
+            "icon_url": "/icons/Gardening tools.png",
+            "image_url": "/images/gardening.png",
+            "rating": 4.4
+        },
+        {
+            "id": 23,
+            "service_name": "Plumbing",
+            "icon_url": "/icons/Plumber.png",
+            "image_url": "/images/plumbing.png",
+            "rating": 4.6
+        },
+        {
+            "id": 24,
+            "service_name": "Remodeling",
+            "icon_url": "/icons/House.png",
+            "image_url": "/images/Remodeling.png",
+            "rating": 3.9
+        }
+    ]
+}

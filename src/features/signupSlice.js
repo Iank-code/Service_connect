@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  role: false,
-  path: false,
+  role: "",
+  path: "",
 };
 const signUpSlice = createSlice({
   name: "signUp",

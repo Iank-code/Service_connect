@@ -41,6 +41,7 @@ function Login() {
           navigate("/home");
         }
         // Handle the server's response
+        localStorage.setItem("role", data.data.user.role);
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("route", data.data.route);
         localStorage.setItem("image", data.data.image);

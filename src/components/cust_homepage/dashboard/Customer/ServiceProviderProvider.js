@@ -1,6 +1,6 @@
 import React from "react";
 import "./AdminHome.css";
-function AdminProvider() {
+function ServiceProviderProvider() {
   return (
     <main>
       <div className="table-data">
@@ -142,4 +142,4 @@ function AdminProvider() {
   );
 }
 
-export default AdminProvider;
+export default ServiceProviderProvider;

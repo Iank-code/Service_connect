@@ -1,9 +1,12 @@
-import React, { useState } from "react";
 import "./AdminHome.css";
-import Users from "./Users";
-import AdminProvider from "./AdminProvider";
+import React, { useState } from "react";
+import CustomerUsers from "./CustomerUsers";
+import ServiceProviderProvider from "./ServiceProviderProvider";
 import Verifiy from "./Verifiy";
-function AdminHome() {
+import { useNavigate } from "react-router-dom";
+function CustomerDashboard() {
+  const navigate = useNavigate();
+
   const [selected, setSelected] = useState("dashboard");
 
   const [isActive, setActive] = useState(false);
@@ -16,7 +19,7 @@ function AdminHome() {
       <section id="sidebar" className={isActive ? "hide" : null}>
         <a href="#" class="brand">
           <i class="bx bxs-smile"></i>
-          <span class="text">AdminHub</span>
+          <span class="text">Customer</span>
         </a>
         <ul class="side-menu top">
           <li class="active" onClick={() => setSelected("dashboard")}>
@@ -43,12 +46,7 @@ function AdminHome() {
               <span class="text">Message</span>
             </a>
           </li>
-          <li onClick={() => setSelected("providers")}>
-            <a href="#">
-              <i class="bx bxs-server"></i>
-              <span class="text">Providers</span>
-            </a>
-          </li>
+
           <li onClick={() => setSelected("users")}>
             <a href="#">
               <i class="bx bxs-group"></i>
@@ -58,15 +56,33 @@ function AdminHome() {
         </ul>
         <ul class="side-menu">
           <li>
-            <a href="#">
+            <a href="/home">
               <i class="bx bxs-cog"></i>
-              <span class="text">Settings</span>
+              <span class="text">Back</span>
             </a>
           </li>
           <li>
             <a href="#" class="logout">
               <i class="bx bxs-log-out-circle"></i>
-              <span class="text">Logout</span>
+              <span
+                class="text"
+                onClick={() => {
+                  var path = localStorage.getItem("route");
+                  // fetch
+                  fetch(`${path}`, {
+                    method: "DELETE",
+                  }).then((res) => {
+                    if (!res.ok) {
+                      throw new Error("Couldn't delete route");
+                    }
+                    localStorage.clear();
+                    navigate("/");
+                    res.json();
+                  });
+                }}
+              >
+                Logout
+              </span>
             </a>
           </li>
         </ul>
@@ -94,8 +110,8 @@ function AdminHome() {
             <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
           </a>
         </nav>
-        {selected === "users" && <Users />}
-        {selected === "providers" && <AdminProvider />}
+        {selected === "users" && <CustomerUsers />}
+        {selected === "providers" && <ServiceProviderProvider />}
         {selected === "verification" && <Verifiy />}
         {selected === "dashboard" && (
           <>
@@ -286,4 +302,4 @@ function AdminHome() {
   );
 }
 
-export default AdminHome;
+export default CustomerDashboard;

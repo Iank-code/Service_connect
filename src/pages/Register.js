@@ -52,8 +52,14 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+
+        console.log(data)
         // Handle the server's response
-        console.log("Upload successful:", data);
+        localStorage.setItem("route", data.data.route);
+        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("image", data.data.image);
+        localStorage.setItem("id", data.data.user.id);
+        localStorage.setItem("name", data.data.user.username);
         // Perform further actions as needed
       })
       .catch((error) => {

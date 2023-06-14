@@ -18,6 +18,7 @@ import AdminHome from "./components/admin/AdminHome";
 import Users from "./components/admin/Users";
 import AdminProvider from "./components/admin/AdminProvider";
 import HomePage from './components/cust_homepage/HomePage';
+import Providerprofile from "./components/provider/providerprofile/Providerprofile";
 
 import { store } from "./store";
 import { Provider } from "react-redux";
@@ -42,10 +43,10 @@ root.render(
           <Route path={"login"} element={<Login />} />
           <Route path={"register"} element={<Register />} />
           <Route path={"services"} element={<ServiceDetail />} />
-
           <Route path="/admin" element={<AdminHome />} /> 
           <Route path="/adminusers" element={<Users />} /> 
           <Route path="/adminprovider" element={<AdminProvider />} /> 
+          <Route path="/providerprofile" element={<Providerprofile />} /> 
           
 
           <Route path={"home"} element={<HomePage />} />

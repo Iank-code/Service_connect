@@ -3,6 +3,7 @@ import './AdminHome.css'
 import Users from './Users';
 import AdminProvider from './AdminProvider';
 import Verifiy from './Verifiy';
+import Analytics from './Analytics';
 function AdminHome() {
     
     const [selected, setSelected] = useState('dashboard')
@@ -18,7 +19,7 @@ function AdminHome() {
         <section id="sidebar"  className={isActive ? 'hide': null} >
           <a href="#" class="brand">
             <i class='bx bxs-smile'></i>
-            <span class="text">AdminHub</span>
+            <span class="text">Admin</span>
           </a>
           <ul class="side-menu top">
             <li class="active" onClick={()=>setSelected('dashboard')}>
@@ -33,7 +34,7 @@ function AdminHome() {
                 <span class="text">Verifications</span>
               </a>
             </li>
-            <li>
+            <li onClick={()=>setSelected('analytics')}>
               <a href="#">
                 <i class='bx bxs-doughnut-chart' ></i>
                 <span class="text">Analytics</span>
@@ -97,6 +98,7 @@ function AdminHome() {
           {selected === 'users' && <Users /> }
           {selected === 'providers' && <AdminProvider /> }
           {selected === 'verification' && <Verifiy /> }
+          {selected === 'analytics' && <Analytics /> }
           {selected === 'dashboard' && 
           <>  
           <main>

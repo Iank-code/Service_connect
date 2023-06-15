@@ -3,6 +3,7 @@ import ProviderCompleted from './ProviderCompleted';
 import ProviderOngoing from './ProviderOngoing';
 import ReviewsProvider from './ReviewsProvider';
 import ProviderMessage from './ProviderMessage';
+import ServiceDetail from '../../../pages/servicePage/ServiceDetail';
 function Providerprofile() {
     const [selected, setSelected] = useState('providerhome')
     
@@ -90,7 +91,7 @@ function Providerprofile() {
           <i class='bx bxs-bell' ></i>
           <span class="num">8</span>
         </a>
-        <a href="#" class="profile">
+        <a href="#" class="profile" onClick={()=>setSelected('profileview')}>
           <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
         </a>
       </nav>
@@ -98,6 +99,7 @@ function Providerprofile() {
       {selected === 'ongoing' &&  <ProviderOngoing /> }
       {selected === 'reviews' && <ReviewsProvider /> }
       {selected === 'message' && <ProviderMessage /> }
+      {selected === 'profileview' && <ServiceDetail /> }
       {selected === 'providerhome' && 
       <>  
       <main>
@@ -129,7 +131,7 @@ function Providerprofile() {
             </span>
           </li>
           <li>
-            <i class='bx bx-current-location' style={{color:'#0ad02b' }}  ></i>
+          <i><img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" /></i>
             <span class="text">
               <h3>StateHouse</h3>
               <p>Odinga William</p>

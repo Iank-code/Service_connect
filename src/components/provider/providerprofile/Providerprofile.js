@@ -121,7 +121,7 @@ function Providerprofile() {
         </div>
         <ul class="box-info">
           <li>
-            <i class='bx bxs-time' style='color:#1d36f7'  ></i>
+            <i class='bx bxs-time' style={{color:'#1d36f7' }} ></i>
             <span class="text">
               <h3>Time: 40 mins</h3>
             

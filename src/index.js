@@ -19,7 +19,6 @@ import Users from "./components/admin/Users";
 import AdminProvider from "./components/admin/AdminProvider";
 import HomePage from './components/cust_homepage/HomePage';
 import Providerprofile from "./components/provider/providerprofile/Providerprofile";
-
 import { store } from "./store";
 import { Provider } from "react-redux";
 

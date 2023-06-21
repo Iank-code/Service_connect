@@ -15,7 +15,7 @@ import Verification from "./components/provider/verification/Verification";
 import ProviderOrders from "./components/provider/providerOrders/ProviderOrders";
 import ServiceDetail from "./pages/servicePage/ServiceDetail";
 import AdminHome from "./components/admin/AdminHome";
-
+import Reviews from "./components/reviews/Reviews";
 import AdminProvider from "./components/admin/AdminProvider";
 import HomePage from './components/cust_homepage/HomePage';
 import Providerprofile from "./components/provider/providerprofile/Providerprofile";
@@ -43,7 +43,7 @@ root.render(
           <Route path={"register"} element={<Register />} />
           <Route path={"services"} element={<ServiceDetail />} />
           <Route path="/admin" element={<AdminHome />} /> 
-       
+          <Route path="/reviews" element={<Reviews />} /> 
           <Route path="/adminprovider" element={<AdminProvider />} /> 
           <Route path="/providerprofile" element={<Providerprofile />} /> 
           

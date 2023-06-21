@@ -98,7 +98,7 @@ function ServiceDetail() {
       </div>
       <div className="service-bar">
         <div className="service-first">
-          <div className="service-first-shared">
+          {/* <div className="service-first-shared">
             <img src={house} alt="house.png" />
             <div>
               <div className="flex flex-row gap-2 items-baseline">
@@ -128,7 +128,7 @@ function ServiceDetail() {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="service-first-shared">
             <img src={user1} alt="user1.png" />
             <div className="flex flex-col gap-3">
@@ -151,13 +151,23 @@ function ServiceDetail() {
             </div>
           </div>
         </div>
-        <div className="service-warning">
+        <div className="service-warn">
           <h4 className="service-warning-header">
             Please Note <span className="text-orange-700">*</span>
           </h4>
           <span className="">
             For your safety never transfer money or communicate outside of
             service connect
+          </span>
+          <button className="service-warning-btn">Book Service</button>
+        </div>
+        <div className="service-warning">
+          <h4 className="service-warning-header">
+            Microservices <span className="super-script text-blue-700">3</span>
+          </h4>
+          <span className="">
+            Date: 12/12/12 <br />
+            time: 11:00 - 12:00
           </span>
           <button className="service-warning-btn">Book Service</button>
         </div>

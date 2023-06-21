@@ -5,12 +5,33 @@
   flex-direction: column;
   width: 300px;
   background-color: rgb(143, 143, 143);
+  padding: 20px 8px;
+  border-radius: 6px;
+  color: black;
+}
+.service-warn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  background-color: rgb(143, 143, 143);
   padding: 3px 8px;
   border-radius: 6px;
   color: black;
 }
 .service-warning-header {
   font-weight: bold;
+  position: relative;
+}
+.super-script{
+  position: absolute;
+  top: -1rem;
+  /* border: 1px solid black; */
+  padding: 5px 12px;
+  border-radius: 50%;
+  background-color: green;
+  color: white;
 }
 button {
   outline: none;

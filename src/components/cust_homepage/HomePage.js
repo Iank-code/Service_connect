@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setServicesData } from '../../redux/ServicesData';
 import Navbar from '../Navbar';
 
+
 function HomePage() {
     const { servicesData} = useSelector(state => state.services);
     const { searchTerm} = useSelector(state => state.searchTerm);
@@ -29,20 +30,21 @@ function HomePage() {
                 <SearchItem/>
                 <Filters/>
                 <div className='flex flex-wrap justify-between px-24'>
-                    {
-                        filteredServices.map((service) => 
-                        <div key={service.id} className='m-8'>
-                            <img src={service.image_url} alt={service.service_name}/>
-                            <span className='flex justify-between mt-2.5'>
-                                <span>{service.service_name}</span>
-                                <span className='flex'>
-                                    <img src="/images/Star.png" alt="" className='max-h-5 mr-2'/>
-                                    <span>{service.rating}</span>
-                                </span>
-                            </span>
-                        </div>)
-                    }
-                </div>
+  {
+    filteredServices.map((service) => 
+      <div key={service.id} className='m-8 hover:cursor-pointer'>
+        <img src={service.image_url} alt={service.service_name} className="w-64 h-36 object-cover"/>
+        <span className='flex justify-between mt-2.5'>
+          <span>{service.service_name}</span>
+          <span className='flex'>
+            <img src="/images/Star.png" alt="" className='max-h-5 mr-2'/>
+            <span>{service.rating}</span>
+          </span>
+        </span>
+      </div>
+    )
+  }
+</div>
             </div>
     )
 };

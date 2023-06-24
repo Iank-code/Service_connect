@@ -6,6 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+
+import { MantineProvider } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
+
+// For admin dashboard
 import ProviderFace from "./components/provider/ProviderFace";
 import ServiceSelect from "./components/provider/serviceSelect/ServiceSelect";
 import Skill from "./components/provider/skill/Skill";
@@ -17,8 +22,13 @@ import ServiceDetail from "./pages/servicePage/ServiceDetail";
 import AdminHome from "./components/admin/AdminHome";
 import Users from "./components/admin/Users";
 import AdminProvider from "./components/admin/AdminProvider";
-import HomePage from './components/cust_homepage/HomePage';
+import HomePage from "./components/cust_homepage/HomePage";
 import Providerprofile from "./components/provider/providerprofile/Providerprofile";
+
+// For service provider dashboard
+import CustomerDashboard from "./components/cust_homepage/dashboard/Customer/CustomerDashboard";
+import CustomerUsers from "./components/cust_homepage/dashboard/Customer/CustomerUsers";
+
 import { store } from "./store";
 import { Provider } from "react-redux";
 
@@ -26,32 +36,40 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/provider" element={<ProviderFace />} />
-          <Route path="/serviceSelect" element={<ServiceSelect />} />
-          <Route path="/skills" element={<Skill />} />
-          <Route path="/location" element={<Location />} /> 
-          <Route path="/summary" element={<Summary />} /> 
-          <Route path="/verification" element={<Verification />} /> 
-          <Route path="/providerorders" element={<ProviderOrders />} /> 
-          <Route path={""} element={<App />} />
-          <Route path={"login"} element={<Login />} />
-          <Route path={"register"} element={<Register />} />
-          <Route path={"services"} element={<ServiceDetail />} />
-          <Route path="/admin" element={<AdminHome />} /> 
-          <Route path="/adminusers" element={<Users />} /> 
-          <Route path="/adminprovider" element={<AdminProvider />} /> 
-          <Route path="/providerprofile" element={<Providerprofile />} /> 
-          
+      <MantineProvider>
+        <Notifications />
 
-          <Route path={"home"} element={<HomePage />} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/provider" element={<ProviderFace />} />
+            <Route path="/serviceSelect" element={<ServiceSelect />} />
+            <Route path="/skills" element={<Skill />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/summary" element={<Summary />} />
+            <Route path="/verification" element={<Verification />} />
+            <Route path="/providerorders" element={<ProviderOrders />} />
+            <Route path={""} element={<App />} />
+            <Route path={"login"} element={<Login />} />
+            <Route path={"register"} element={<Register />} />
+            <Route path={"services"} element={<ServiceDetail />} />
+            <Route path="/admin" element={<AdminHome />} />
+            <Route path="/adminusers" element={<Users />} />
+            <Route path="/adminprovider" element={<AdminProvider />} />
+            <Route path="/providerprofile" element={<Providerprofile />} />
 
-        </Routes>
-      </BrowserRouter>
+            {/* Route for Service provider dashboard */}
+            <Route
+              path={"dashboard/customer"}
+              element={<CustomerDashboard />}
+            />
+
+            <Route path={"home"} element={<HomePage />} />
+          </Routes>
+        </BrowserRouter>
+      </MantineProvider>
     </Provider>
   </React.StrictMode>
 );

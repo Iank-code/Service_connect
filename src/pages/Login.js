@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { notifications } from "@mantine/notifications";
+import { IconX, IconCheck } from "@tabler/icons-react";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -8,6 +10,7 @@ import { setPath } from "../features/signupSlice";
 import ellipse from "./../assets/ellipse.png";
 import ellipse2 from "./../assets/ellipse2.png";
 import arrowstwo from "./../assets/arrowstwo.png";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -35,12 +38,24 @@ function Login() {
       method: "POST",
       body: formItem,
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          notifications.show({
+            title: "Failed",
+            message: "Seems there is something wrong 🤥",
+            color: "red",
+            autoClose: 1800,
+            icon: <IconX />,
+          });
+        }
+        return response.json();
+      })
       .then((data) => {
         if (data.data.token) {
           navigate("/home");
         }
         // Handle the server's response
+        localStorage.setItem("role", data.data.user.role);
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("route", data.data.route);
         localStorage.setItem("image", data.data.image);

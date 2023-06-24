@@ -4,7 +4,6 @@ import Filters from "./Filters";
 import SearchItem from "./SearchItem";
 import { useDispatch, useSelector } from "react-redux";
 import { setServicesData } from "../../redux/ServicesData";
-import Navbar from "../Navbar";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function HomePage() {
@@ -12,10 +11,8 @@ function HomePage() {
   const { searchTerm } = useSelector((state) => state.searchTerm);
   const dispatch = useDispatch();
 
-  console.log(searchTerm);
-
   useEffect(() => {
-    fetch("http://localhost:3000/services")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => dispatch(setServicesData(data)));
   }, []);
@@ -37,13 +34,20 @@ function HomePage() {
 
           {/* For Links */}
           <div className="flex gap-5 mobile:gap-2 mobile:text-sm">
-            <NavLink to={"/"} className="hover:text-green-900">
+            <NavLink to={"/home"} className="hover:text-green-900">
               Home
             </NavLink>
-            <NavLink className="hover:text-green-900">Services</NavLink>
-            <NavLink className="hover:text-green-900">How it works</NavLink>
-            <NavLink className="hover:text-green-900">About</NavLink>
-            <NavLink className="hover:text-green-900">Contact</NavLink>
+            <NavLink
+              className="hover:text-green-900"
+              onClick={() => {
+                const role = localStorage.getItem("role");
+                if (role === "customer") {
+                  navigate("/dashboard/customer");
+                }
+              }}
+            >
+              Dashboard
+            </NavLink>
           </div>
         </div>
 
@@ -56,14 +60,14 @@ function HomePage() {
               // fetch
               fetch(`${path}`, {
                 method: "DELETE",
-              })
-                .then((res) => {
-                  if (!res.ok) {
-                    throw new Error("Couldn't delete route");
-                  }
-                  localStorage.clear();
-                  res.json();
-                })
+              }).then((res) => {
+                if (!res.ok) {
+                  throw new Error("Couldn't delete route");
+                }
+                localStorage.clear();
+                navigate("/");
+                res.json();
+              });
             }}
           >
             Log Out

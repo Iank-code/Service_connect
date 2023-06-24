@@ -52,6 +52,13 @@ function Login() {
       })
       .then((data) => {
         if (data.data.token) {
+          notifications.show({
+            title: "Success",
+            message: `Welcome back ${data.data.user.username}`,
+            color: "green",
+            autoClose: 1800,
+            icon: <IconCheck />,
+          });
           navigate("/home");
         }
         // Handle the server's response

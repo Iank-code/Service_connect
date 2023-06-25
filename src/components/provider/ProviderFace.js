@@ -8,6 +8,18 @@ function ProviderFace() {
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
 
   const handleFileUpload = async (file) => {
+
+      // Check if the file size is less than 2 MB
+  if (file.size > 2 * 1024 * 1024) {
+    alert('File size must be less than 2 MB');
+    return;
+  }
+
+  // Check if the file type is PNG or JPG
+  if (!['image/png', 'image/jpeg'].includes(file.type)) {
+    alert('File type must be PNG or JPG');
+    return;
+  }
     // Replace this URL with the URL of your backend route for handling file uploads
     const uploadUrl = 'http://localhost:3000/profile';
 

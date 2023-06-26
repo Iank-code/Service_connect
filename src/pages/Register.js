@@ -7,8 +7,10 @@ import arrowstwo from "./../assets/arrowstwo.png";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Navbar";
 import { setRole, setPath } from "./../features/signupSlice";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const store = useSelector((store) => store.signup);
   const [step, setStep] = useState(1);
@@ -52,12 +54,16 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the server's response
-        console.log("Upload successful:", data);
-        // Perform further actions as needed
+        if (data.data.token) {
+          navigate("/home");
+        }
+        localStorage.setItem("route", data.data.route);
+        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("image", data.data.image);
+        localStorage.setItem("id", data.data.user.id);
+        localStorage.setItem("name", data.data.user.username);
       })
       .catch((error) => {
-        // Handle any errors that occurred during the upload
         console.error("Upload failed:", error);
       });
   };

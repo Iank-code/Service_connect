@@ -1,15 +1,18 @@
-import { useEffect } from 'react';
-import '../../App.css';
-import Filters from './Filters';
-import SearchItem from './SearchItem';
-import { useDispatch, useSelector } from 'react-redux';
-import { setServicesData } from '../../redux/ServicesData';
-import Navbar from '../Navbar';
+import { useEffect } from "react";
+import "../../App.css";
+import Filters from "./Filters";
+import SearchItem from "./SearchItem";
+import { useDispatch, useSelector } from "react-redux";
+import { setServicesData } from "../../redux/ServicesData";
+import Navbar from "../Navbar";
+import { NavLink, useNavigate } from "react-router-dom";
+
+
 
 function HomePage() {
-    const { servicesData} = useSelector(state => state.services);
-    const { searchTerm} = useSelector(state => state.searchTerm);
-    const dispatch = useDispatch();
+  const { servicesData } = useSelector((state) => state.services);
+  const { searchTerm } = useSelector((state) => state.searchTerm);
+  const dispatch = useDispatch();
 
     console.log(searchTerm);
 
@@ -31,8 +34,8 @@ function HomePage() {
                 <div className='flex flex-wrap justify-between px-24'>
                     {
                         filteredServices.map((service) => 
-                        <div key={service.id} className='m-8'>
-                            <img src={service.image_url} alt={service.service_name}/>
+                        <div key={service.id} className='m-8 hover:cursor-pointer'>
+                        <img src={service.image_url} alt={service.service_name} className="w-64 h-36 object-cover"/>
                             <span className='flex justify-between mt-2.5'>
                                 <span>{service.service_name}</span>
                                 <span className='flex'>

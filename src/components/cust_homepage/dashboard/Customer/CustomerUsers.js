@@ -1,12 +1,12 @@
 import React from "react";
 import "./AdminHome.css";
-function AdminProvider() {
+function CustomerUsers() {
   return (
     <main>
       <div className="table-data">
         <div class="order">
           <div class="head">
-            <h3>Service Providers</h3>
+            <h3>Customers</h3>
             <i class="bx bx-search"></i>
             <i class="bx bx-filter"></i>
           </div>
@@ -15,9 +15,8 @@ function AdminProvider() {
               <tr>
                 <th>Name</th>
 
-                <th>Service Name</th>
                 <th>Ongoing Orders</th>
-                <th>Rating</th>
+
                 <th>More</th>
                 <th className="admin-action-btn">
                   <span>Edit</span> <span>Delete</span>
@@ -32,13 +31,7 @@ function AdminProvider() {
                 </td>
 
                 <td>
-                  <span class="st">Cleaning</span>
-                </td>
-                <td>
                   <span class="status process">1</span>
-                </td>
-                <td>
-                  <span class="s">4.8</span>
                 </td>
 
                 <td>
@@ -60,13 +53,7 @@ function AdminProvider() {
                 </td>
 
                 <td>
-                  <span class="st">Cleaning</span>
-                </td>
-                <td>
                   <span class="status process">40</span>
-                </td>
-                <td>
-                  <span class="st">4</span>
                 </td>
 
                 <td>
@@ -87,18 +74,11 @@ function AdminProvider() {
                   <p>Onyancha Junior</p>
                 </td>
                 <td>
-                  <span class="st">Cleaning</span>
-                </td>
-                <td>
                   <span class="status process">23</span>
-                </td>
-                <td>
-                  <span class="st">3.5</span>
                 </td>
                 <td>
                   <span class="admin-service">Details</span>
                 </td>
-
                 <td className="admin-action-btn">
                   <span class="admin-service-action-btn">
                     <i class="fas fa-edit" aria-hidden="true"></i>
@@ -113,14 +93,9 @@ function AdminProvider() {
                   <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g" />
                   <p>Alex Mwakideu</p>
                 </td>
-                <td>
-                  <span class="st">Cleaning</span>
-                </td>
+
                 <td>
                   <span class="status process">40</span>
-                </td>
-                <td>
-                  <span class="st">5</span>
                 </td>
                 <td>
                   <span class="admin-service">Details</span>
@@ -142,4 +117,4 @@ function AdminProvider() {
   );
 }
 
-export default AdminProvider;
+export default CustomerUsers;

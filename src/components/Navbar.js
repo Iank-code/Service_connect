@@ -21,7 +21,7 @@ function Navbar() {
           <NavLink to={"/"} className="hover:text-green-900">
             Home
           </NavLink>
-          <NavLink className="hover:text-green-900">Services</NavLink>
+          <NavLink to = {"/home"}className="hover:text-green-900">Services</NavLink>
           <NavLink className="hover:text-green-900">How it works</NavLink>
           <NavLink className="hover:text-green-900">About</NavLink>
           <NavLink className="hover:text-green-900">Contact</NavLink>

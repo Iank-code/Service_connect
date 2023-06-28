@@ -32,7 +32,7 @@ function ServiceDetail() {
 
 
       <div className="select-container">
-        <h1 className="font-bold text-2xl">Choose Micro-service</h1>
+        <h1 className="font-bold text-2xl">Cleaning Micro-service</h1>
         <div className="select">
           {/* All services being offered by service provider */}
           <div className="subservice-select">
@@ -159,7 +159,7 @@ function ServiceDetail() {
             For your safety never transfer money or communicate outside of
             service connect
           </span>
-          <button className="service-warning-btn">Book Service</button>
+          <button className="service-warning-btn">Message provider</button>
         </div>
         <div className="service-warning">
           <h4 className="service-warning-header">

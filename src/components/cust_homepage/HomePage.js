@@ -5,14 +5,16 @@ import SearchItem from "./SearchItem";
 import { useDispatch, useSelector } from "react-redux";
 import { setServicesData } from "../../redux/ServicesData";
 import Navbar from "../Navbar";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 
 
 
 function HomePage() {
+
   const { servicesData } = useSelector((state) => state.services);
   const { searchTerm } = useSelector((state) => state.searchTerm);
   const dispatch = useDispatch();
+  const navigate =  useNavigate()
 
     console.log(searchTerm);
 
@@ -34,7 +36,7 @@ function HomePage() {
                 <div className='flex flex-wrap justify-between px-24'>
                     {
                         filteredServices.map((service) => 
-                        <div key={service.id} className='m-8 hover:cursor-pointer'>
+                        <div key={service.id} className='m-8 hover:cursor-pointer' onClick={()=>navigate('/services')}>
                         <img src={service.image_url} alt={service.service_name} className="w-64 h-36 object-cover"/>
                             <span className='flex justify-between mt-2.5'>
                                 <span>{service.service_name}</span>

@@ -42,67 +42,6 @@ function Skill() {
               </div>
             </div>
           </div>
-
-          {/* <div className="border-2 border-black rounded pl-2 providers-image">
-          
-          <div className="upload-wrapper">
-            <div className="upload-box">
-              <label className="custom-file-input" for="upload">
-                <span>Upload image</span>
-              </label>
-              <input id="upload" type="file" accept="image/png, image/jpg, image/gif, image/jpeg" />
-            </div>
-            <div>
-            <h1></h1>
-            <form className="flex flex-col rounded-md py-1 px-5">
-              <label>Sub-service name:</label>
-              <input
-                className="border-2 border-black rounded pl-2"
-                type="text"
-             
-              />
-
-              <label>Amount in KSH:</label>
-              <input
-                className="border-2 border-black rounded pl-2"
-                type="number"
-         
-              />
-
-            </form>
-          </div>
-          <button className='upload-sub-service'>Save</button>
-          </div>
-          <div className="upload-wrapper">
-            <div className="upload-box">
-              <label className="custom-file-input" for="upload">
-                <span>Upload image</span>
-              </label>
-              <input id="upload" type="file" accept="image/png, image/jpg, image/gif, image/jpeg" />
-            </div>
-            <div>
-            <h1></h1>
-            <form className="flex flex-col rounded-md py-1 px-5">
-              <label>Sub-service name:</label>
-              <input
-                className="border-2 border-black rounded pl-2"
-                type="text"
-             
-              />
-
-              <label>Amount in KSH:</label>
-              <input
-                className="border-2 border-black rounded pl-2"
-                type="number"
-         
-              />
-
-            </form>
-          </div>
-          <button className='upload-sub-service'>Save</button>
-          </div>
-          
-                </div> */}
         </div>
       </div>
       <div className="next-back-btn">

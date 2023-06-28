@@ -1,11 +1,11 @@
-.skill-container{
-    display: flex;
-    justify-content: center;
+/* .skill-container{
+    /* display: flex;
+    justify-content: center; */
     /* align-items: center; */
     
-}
+
 .skill-child-container{
-    margin-top: 10%;
+    margin-top: 2%;
 }
 .skill-description{
     display: flex;

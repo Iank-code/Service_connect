@@ -63,7 +63,7 @@ function Verification() {
         <button className="back" onClick={() => navigate("/summary")}>
           back
         </button>
-        <button className="next" onClick={() => navigate("/profile")}>
+        <button className="next" onClick={() => navigate("/providerprofile")}>
           finish
         </button>
       </div>

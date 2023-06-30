@@ -3,7 +3,7 @@ import "./auth.css";
 
 import ellipse from "./../assets/ellipse.png";
 import ellipse2 from "./../assets/ellipse2.png";
-import arrowstwo from "./../assets/arrowstwo.png";
+import arrowstwo from "./../assets/arrowstwo.png"; 
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Navbar";
 import { setRole, setPath } from "./../features/signupSlice";
@@ -54,6 +54,7 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         if (data.data.token) {
           navigate("/home");
         }

@@ -87,5 +87,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-// {require(value.image_url)}

@@ -117,10 +117,16 @@ function ServiceDetail() {
         <div className="service-bar">
           <div className="service-first">
             <div className="service-first-shared">
-              <img src={data?.image} alt={`${data?.data.name}.png`} />
+              <img
+                src={data?.provider_image}
+                alt={`${data?.provider.username}.png`}
+                style={{
+                  width: "80px",
+                }}
+              />
               <div className="flex flex-col gap-3">
                 <div className="flex flex-row gap-2 items-baseline">
-                  <p>{data?.data.name}</p>
+                  <p>{data?.provider.username}</p>
                   <span>will serve you</span>
                 </div>
                 <div className="flex gap-5">

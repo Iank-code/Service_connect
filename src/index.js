@@ -55,7 +55,7 @@ root.render(
             <Route path={""} element={<App />} />
             <Route path={"login"} element={<Login />} />
             <Route path={"register"} element={<Register />} />
-            <Route path={"services"} element={<ServiceDetail />} />
+            <Route path={"services/:id"} element={<ServiceDetail />} />
             <Route path="/admin" element={<AdminHome />} />
             <Route path="/adminusers" element={<Users />} />
             <Route path="/adminprovider" element={<AdminProvider />} />

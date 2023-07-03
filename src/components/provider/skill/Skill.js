@@ -1,20 +1,42 @@
 import React, { useState } from "react";
 import "./Skill.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 function Skill() {
+  const [imageData, setImageData] = useState(null)
   const navigate = useNavigate();
-  const formItem = new FormData();
-const [name, setName] = useState()
-const [price, setPrice] = useState()
-const [file, setFile] = useState()
-  formItem.append("name", name);
-  formItem.append("price", price);
-  formItem.append("file", file);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState(null);
+  const [file, setFile] = useState(null);
+  console.log(imageData)
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  function handleSubmit(e){
-    e.preventEfault()
-    console.log(formItem)
-  }
+    const formItem = new FormData();
+    formItem.append("name", name);
+    formItem.append("price", price);
+    // formItem.append("description", "Test description");
+    formItem.append("service_id", 1);
+    formItem.append("images[]", file);
+
+  
+
+    axios({
+      method: "post",
+      url: "http://127.0.0.1:3000/microservices",
+      data: formItem,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response.data);
+        setImageData(response.data)
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+  };
   return (
     <div>
       <div className="skill-container">
@@ -25,45 +47,55 @@ const [file, setFile] = useState()
             <p>Add name or title and price for each sub-service</p>
             <p>Stand out and entice customers to choose your services.</p>
           </div>
-          <form class="upload-sub-service-container">
-            <label class="upload-box" for="upload">
-              <i class="upload-icon fas fa-cloud-upload-alt"></i>
+          {imageData &&(<div>
+            <img src={imageData.data.images[0]} alt="" srcSet=""  className="w-64 h-64 object-cover" />
+            <p>Name: {imageData.data.data.name}</p>
+            <p>Price: {imageData.data.data.price}</p>
+          </div>)}
+          <form className="upload-sub-service-container">
+            <label className="upload-box">
+              <i className="upload-icon fas fa-cloud-upload-alt"></i>
 
-              <span class="upload-text">Choose photos or drag it here</span>
-            </label>
-            <input
-            id="upload"
+              <input
+                id="upload"
                 type="file"
                 accept="image/*"
-          
+                multiple
                 onChange={(e) => {
                   setFile(e.target.files[0]);
                 }}
-              
-                multiple/>
-            {/* <input id="upload" type="file" accept="image/*" multiple /> */}
-            <div class="image-info">
-              <div class="image-name">
-                <label for="name">Name:</label>
+              />
+              <span className="upload-text">Choose photos or drag it here</span>
+            </label>
+
+            <div className="image-info">
+              <div className="image-name">
+                <label>Name:</label>
                 <input
-                 type="text"
-                 value={name}
-                 onChange={(e) => setName(e.target.value)}
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter a name for your photo"
                 />
               </div>
 
-              <div class="image-price">
-                <label for="price">Price:</label>
+              <div className="image-price">
+                <label>Price:</label>
 
                 <input
-                 type="text"
-                 value={price}
-                 onChange={(e) => setPrice(e.target.value)}
+                  id="price"
+                  type="number"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
                   placeholder="Enter a price for this "
                 />
               </div>
             </div>
-            <button className="back" type="submit"onClick={handleSubmit}>upload</button>
+
+            <button type="submit" onClick={handleSubmit}>
+              Upload
+            </button>
           </form>
         </div>
       </div>

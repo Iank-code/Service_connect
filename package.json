@@ -5,12 +5,12 @@
   "dependencies": {
     "@mantine/core": "^6.0.14",
     "@mantine/notifications": "^6.0.14",
-    "tabler-icons-react": "^1.56.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "apexcharts": "^3.41.0",
+    "axios": "^1.4.0",
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0",
     "postcss-loader": "^7.3.0",
@@ -22,6 +22,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "tabler-icons-react": "^1.56.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

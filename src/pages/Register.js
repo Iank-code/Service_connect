@@ -45,7 +45,6 @@ const Register = () => {
     formItem.append("password_confirmation", confirmPassword);
     formItem.append("address", "232323");
     formItem.append("phone_number", "123");
-    formItem.append("address", "232323");
     formItem.append("role", store.role);
     formItem.append("file", selectedFile);
     fetch(`${store.path}`, {
@@ -54,10 +53,10 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         if (data.data.token) {
           navigate("/home");
         }
+        console.log(data.data)
         localStorage.setItem("route", data.data.route);
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("image", data.data.image);

@@ -84,6 +84,7 @@ root.render(
             />
           </Routes>
         </BrowserRouter>
+        
       </MantineProvider>
     </Provider>
   </React.StrictMode>

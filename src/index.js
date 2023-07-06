@@ -32,6 +32,7 @@ import CustomerUsers from "./components/cust_homepage/dashboard/Customer/Custome
 
 import { store } from "./store";
 import { Provider } from "react-redux";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -47,12 +48,16 @@ root.render(
             <Route path="/register" element={<Register />} />
             <Route path="/provider" element={<ProviderFace />} />
             <Route path="/serviceSelect" element={<ServiceSelect />} />
-            <Route path="/skills" element={<Skill />} />
+
+            <Route
+              path="/skills"
+              element={<ProtectedRoute to="/skills" outlet={<Skill />} />}
+            />
+
             <Route path="/location" element={<Location />} />
             <Route path="/summary" element={<Summary />} />
             <Route path="/verification" element={<Verification />} />
             <Route path="/providerorders" element={<ProviderOrders />} />
-            <Route path={""} element={<App />} />
             <Route path={"login"} element={<Login />} />
             <Route path={"register"} element={<Register />} />
             <Route path={"services/:id"} element={<ServiceDetail />} />
@@ -64,12 +69,22 @@ root.render(
             {/* Route for Service provider dashboard */}
             <Route
               path={"dashboard/customer"}
-              element={<CustomerDashboard />}
+              element={
+                <ProtectedRoute
+                  to="/dashboard/customer"
+                  outlet={<CustomerDashboard />}
+                />
+              }
             />
 
             <Route path={"home"} element={<HomePage />} />
+            <Route
+              path={"home"}
+              element={<ProtectedRoute to="/home" outlet={<HomePage />} />}
+            />
           </Routes>
         </BrowserRouter>
+        
       </MantineProvider>
     </Provider>
   </React.StrictMode>

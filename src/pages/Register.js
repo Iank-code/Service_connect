@@ -3,7 +3,7 @@ import "./auth.css";
 
 import ellipse from "./../assets/ellipse.png";
 import ellipse2 from "./../assets/ellipse2.png";
-import arrowstwo from "./../assets/arrowstwo.png"; 
+import arrowstwo from "./../assets/arrowstwo.png";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Navbar";
 import { setRole, setPath } from "./../features/signupSlice";
@@ -33,7 +33,6 @@ const Register = () => {
     if (!selectedFile) {
       alert("Please select a file");
     }
-    console.log(selectedFile);
     // path: store.path,
     // role: store.role,
 
@@ -53,10 +52,10 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data.data);
         if (data.data.token) {
           navigate("/home");
         }
-        console.log(data.data)
         localStorage.setItem("route", data.data.route);
         localStorage.setItem("token", data.data.token);
         localStorage.setItem("image", data.data.image);
@@ -177,7 +176,6 @@ const Register = () => {
                 // name="image"
                 id="file-input"
                 onChange={(e) => {
-                  console.log(e.target.files[0]);
                   setSelectedFile(e.target.files[0]);
                 }}
               />
